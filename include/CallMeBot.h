@@ -55,7 +55,6 @@ void Facebook(String apiKey, String message) {
 // html_format : yes/no -  Default: no - Optional parameter to send the message in html format or plain text. Put "yes" when you want to send "bold" text using test (url example: &html=yes)
 // link_preview : yes/no - Default: no - It will enable or disable the webpage preview that is sent together with the text message when there is an URL on it.
 void Telegram(String username, String apiKey, String message) {
-  https://api.callmebot.com/text.php?user=[username]&text=[text]&html=[html_format]&links=[link_preview]
   // Data to send with HTTP POST
   String url = "https://api.callmebot.com/text.php?user=" + username + "&apikey=" + apiKey + "&text=" + urlEncode(message);
   WiFiClient client;    
