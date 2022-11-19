@@ -1,4 +1,3 @@
-#include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
 #include <UrlEncode.h>
@@ -86,7 +85,7 @@ void Telegram(String username, String apiKey, String message) {
 // link_preview : yes/no - Default: no - It will enable or disable the webpage preview that is sent together with the text message when there is an URL on it.
 void TelegramGroup(String apiKey, String message, String html_format) {
   // Data to send with HTTP POST
-  String url = "https://api.callmebot.com/telegram/group.php?apikey=" + apiKey + "&text=" + message "&html=" + html_format;
+  String url = "https://api.callmebot.com/telegram/group.php?apikey=" + apiKey + "&text=" + message + "&html=" + html_format;
   WiFiClient client;    
   HTTPClient http;
   http.begin(client, url);
