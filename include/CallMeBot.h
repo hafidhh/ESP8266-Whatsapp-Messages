@@ -108,3 +108,28 @@ void TelegramGroup(String apiKey, String message, String html_format) {
   // Free resources
   http.end();
 }
+
+void TelegramCall(String username, String Text, String language, String repeat, String textcarbon, String timeout) {
+  // Data to send with HTTP POST
+  String url = "http://api.callmebot.com/start.php?user=" + username + "&text=" + Text + "&lang=" + language + "&rpt=" + repeat + "&cc=" + textcarbon + "&timeout=" + timeout;
+  WiFiClient client;    
+  HTTPClient http;
+  http.begin(client, url);
+
+  // Specify content-type header
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  
+  // Send HTTP POST request
+  int httpResponseCode = http.POST(url);
+  if (httpResponseCode == 200){
+    Serial.print("Message sent successfully");
+  }
+  else{
+    Serial.println("Error sending the message");
+    Serial.print("HTTP response code: ");
+    Serial.println(httpResponseCode);
+  }
+
+  // Free resources
+  http.end();
+}
