@@ -1,8 +1,10 @@
+// ESP8266 WhatsApp Message
+// Callmebot ESP8266 Library : https://github.com/hafidhh/Callmebot-ESP8266
+// Github : https://github.com/hafidhh
+//          https://github.com/hafidhh/ESP8266-Whatsapp-Messages
+
 #include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
-#include <WiFiClient.h>
-#include <UrlEncode.h>
-#include <CallMeBot.h>
+#include <Callmebot_ESP8266.h>
 
 const char* ssid = "REPLACE_WITH_YOUR_SSID";
 const char* password = "REPLACE_WITH_YOUR_PASSWORD";
@@ -26,8 +28,7 @@ void setup() {
   Serial.println(WiFi.localIP());
 
   // Send Message to WhatsAPP
-
-  WhatsApp(phoneNumber, apiKey, "Hello from ESP8266!");
+  whatsappMessage(phoneNumber, apiKey, "message");
 }
 
 void loop() {
